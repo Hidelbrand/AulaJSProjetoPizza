@@ -162,7 +162,9 @@ function updateCart() {
             c('.cart').append(cartItem);
         }
 
-        desconto = subtotal * 0.1;
+        if(subtotal > 30) {
+            desconto = subtotal * 0.1;
+        }
         total = subtotal - desconto;
 
         c('.subtotal span:last-child').innerHTML = `R$ ${subtotal.toFixed(2)}`;
